@@ -1,4 +1,4 @@
-function loadEvents(client) {
+export function loadEvents(client) {
   const ascii = require('ascii-table');
   const table = new ascii().setHeading('Events', 'Status');
   const fs = require('node:fs');
@@ -23,4 +23,4 @@ function loadEvents(client) {
   }
   return console.log(table.toString(), '\n Loaded events');
 }
-module.exports = { loadEvents };
+

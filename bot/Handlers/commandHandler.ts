@@ -1,6 +1,6 @@
 const { Logger } = require('../../utils/Logger');
 
-function loadCommands(client) {
+export function loadCommands(client) {
   const ascii = require('ascii-table');
   const fs = require('fs');
   const table = new ascii().setHeading('commands', 'Status');
@@ -24,4 +24,3 @@ function loadCommands(client) {
   client.application.commands.set(commandsArray);
   return console.log(table.toString(), '\n Loaded Commands');
 }
-module.exports = { loadCommands };
