@@ -12,7 +12,7 @@ module.exports = {
     if(interactionContent.startsWith(botCommand)){
       
     }
-    if (interactionContent.startsWith('')){
+    if (interactionContent.startsWith(botCommand)){
       message.reply('Olá')
     }
   }

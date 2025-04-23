@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 import { Client, GatewayIntentBits, Partials, Collection } from 'discord.js';
+import express = require('express')
 
 const { loadCommands } = require('./bot/Handlers/commandHandler');
 const { loadEvents } = require('./bot/Handlers/eventHandler');
@@ -38,18 +39,17 @@ client.config = process.env.BOT_TOKEN;
 client.login(client.config).then(() => {
   loadCommands(client);
   loadEvents(client);
+  
+  const app = express()
+  const port = 3000
+
+  app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
+  res.send('Hello World!')
+  })
+  app.listen(port, () => {
+    console.log(`Example app listening on port http://localhost:${port}/`)
+  })
 });
 
 
-// import express = require('express')
-// const app = express()
-// const port = 3000
-
-// app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
-//   res.send('Hello World!')
-// })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening on port http://localhost:${port}/`)
-// })
 

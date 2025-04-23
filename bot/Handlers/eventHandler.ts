@@ -1,4 +1,6 @@
-export function loadEvents(client:any) {
+import { Client } from "discord.js";
+
+export function loadEvents(client:Client) {
   const ascii = require('ascii-table');
   const table = new ascii().setHeading('Events', 'Status');
   const fs = require('node:fs');
